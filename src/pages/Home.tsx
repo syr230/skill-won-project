@@ -175,69 +175,50 @@ const Home = () => {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative pt-32 pb-20 px-4 overflow-hidden bg-gradient-to-b from-primary/3 via-primary/2 to-background"
+        className="relative pt-32 pb-20 px-4 overflow-hidden"
       >
-        {/* Enhanced Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Large floating orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
-          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }}></div>
-          
-          {/* Small moving dots */}
-          <div className="absolute top-32 right-1/4 w-3 h-3 bg-primary/60 rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute top-48 left-1/3 w-2 h-2 bg-primary/60 rounded-full animate-float" style={{ animationDelay: "2.5s" }}></div>
-          <div className="absolute bottom-40 right-1/3 w-4 h-4 bg-primary/60 rounded-full animate-float" style={{ animationDelay: "3.5s" }}></div>
-          <div className="absolute top-64 left-20 w-2 h-2 bg-primary/40 rounded-full animate-float" style={{ animationDelay: "1.8s" }}></div>
-          <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-primary/40 rounded-full animate-float" style={{ animationDelay: "4.2s" }}></div>
-          
-          {/* Gradient rings */}
-          <div className="absolute top-40 right-20 w-32 h-32 border-2 border-primary/15 rounded-full animate-float" style={{ animationDelay: "0.5s" }}></div>
-          <div className="absolute bottom-48 left-16 w-24 h-24 border-2 border-primary/15 rounded-full animate-float" style={{ animationDelay: "2.8s" }}></div>
-          <div className="absolute top-56 left-1/2 w-20 h-20 border-2 border-primary/15 rounded-full animate-float" style={{ animationDelay: "3.2s" }}></div>
+        {/* Hero background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroImage}
+            alt="Background"
+            className="w-full h-full object-cover opacity-95"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
         </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="inline-block animate-slide-in">
-                <span className="px-4 py-2 bg-gradient-to-r from-primary/10 to-primary/5 text-primary rounded-full text-sm font-medium border border-primary/20 animate-glow">
-                  ✨ Empowering future talent
-                </span>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-slide-up">
-                Master Real Skills in{" "}
-                <span className="gradient-text animate-gradient">
-                  AI & Tech
-                </span>
-              </h1>
-              <p className="text-xl text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Practical programs in AI, Data Analytics, Web Development and Prompt Engineering. 
-                Join our WhatsApp community and start learning today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-                <Button variant="cta" size="lg" className="hover-lift group" asChild>
-                  <a
-                    href="https://wa.me/YOUR_NUMBER?text=I'm%20interested%20in%20Skillwon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Join WhatsApp Group
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
-                  </a>
-                </Button>
-                <Button variant="outline" size="lg" className="hover-lift hover:border-primary/50" asChild>
-                  <Link to="/programs">View Programs</Link>
-                </Button>
-              </div>
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="inline-block animate-slide-in">
+              <span className="px-4 py-2 bg-gradient-to-r from-primary/10 to-primary/5 text-primary rounded-full text-sm font-medium border border-primary/20 animate-glow backdrop-blur-sm">
+                ✨ Empowering future talent
+              </span>
             </div>
-            <div className="relative animate-scale-in" style={{ animationDelay: "0.3s" }}>
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-3xl blur-2xl opacity-20 animate-glow"></div>
-              <img
-                src={heroImage}
-                alt="Students learning together"
-                className="relative rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
-              />
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-slide-up text-white drop-shadow-lg">
+              Master Real Skills in{" "}
+              <span className="gradient-text animate-gradient">
+                AI & Tech
+              </span>
+            </h1>
+            <p className="text-xl text-white/90 animate-fade-in max-w-2xl mx-auto font-medium drop-shadow-md" style={{ animationDelay: "0.2s" }}>
+              Practical programs in AI, Data Analytics, Web Development and Prompt Engineering. 
+              Join our WhatsApp community and start learning today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+              <Button variant="cta" size="lg" className="hover-lift group" asChild>
+                <a
+                  href="https://wa.me/YOUR_NUMBER?text=I'm%20interested%20in%20Skillwon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join WhatsApp Group
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform inline-block">→</span>
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="hover-lift hover:border-primary/50 backdrop-blur-sm" asChild>
+                <Link to="/programs">View Programs</Link>
+              </Button>
             </div>
           </div>
         </div>
